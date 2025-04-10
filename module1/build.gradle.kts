@@ -12,12 +12,12 @@ dependencies {
     implementation(project(":module2"))
     implementation(libs.junit.api)
     implementation(kotlin("stdlib"))
-    testImplementation("org.junit.jupiter:junit-jupiter:5.9.0")
-    testImplementation("org.junit.jupiter:junit-jupiter-params:5.9.0")
+    testImplementation("org.junit.jupiter:junit-jupiter:5.10.0")
+    testImplementation("org.junit.jupiter:junit-jupiter-params:5.10.0")
     testRuntimeOnly(libs.junit.engine)
 }
 
-tasks.test {
+tasks.withType<Test>() {
     useJUnitPlatform() // ✅ Ensures JUnit 5 is used
 
     testLogging {
