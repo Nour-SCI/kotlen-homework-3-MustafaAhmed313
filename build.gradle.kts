@@ -13,16 +13,17 @@ plugins {
 group = "org.example"
 version = "1.0-SNAPSHOT"
 
+dependencies {
+    testImplementation(libs.junit.api)
+    testRuntimeOnly(libs.junit.engine)
+    testRuntimeOnly(libs.junit.console)
+}
+
 allprojects {
     repositories {
         mavenCentral()
     }
 
-    dependencies {
-        implementation("org.junit.jupiter:junit-jupiter-api:5.9.0")
-        runtimeOnly("org.junit.jupiter:junit-jupiter-engine:5.9.0")
-        runtimeOnly("org.junit.platform:junit-platform-console:1.9.0")
-    }
 
     tasks.withType<KotlinCompile> {
         kotlinOptions.jvmTarget = "1.8"
